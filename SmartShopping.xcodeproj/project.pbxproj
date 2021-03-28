@@ -13,6 +13,8 @@
 		5516C01226102CDC00482665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516C01026102CDC00482665 /* Main.storyboard */; };
 		5516C01426102CDD00482665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5516C01326102CDD00482665 /* Assets.xcassets */; };
 		5516C01726102CDD00482665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516C01526102CDD00482665 /* LaunchScreen.storyboard */; };
+		5516C02426103E4600482665 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516C02326103E4600482665 /* User.swift */; };
+		5516C028261045D900482665 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516C027261045D900482665 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		5516C01326102CDD00482665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5516C01626102CDD00482665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5516C01826102CDD00482665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5516C02326103E4600482665 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5516C027261045D900482665 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		5516C00926102CDC00482665 /* SmartShopping */ = {
 			isa = PBXGroup;
 			children = (
+				5516C02226103E3100482665 /* model */,
 				5516C00A26102CDC00482665 /* AppDelegate.swift */,
 				5516C00C26102CDC00482665 /* SceneDelegate.swift */,
 				5516C00E26102CDC00482665 /* ViewController.swift */,
@@ -63,8 +68,17 @@
 				5516C01326102CDD00482665 /* Assets.xcassets */,
 				5516C01526102CDD00482665 /* LaunchScreen.storyboard */,
 				5516C01826102CDD00482665 /* Info.plist */,
+				5516C027261045D900482665 /* RegistrationViewController.swift */,
 			);
 			path = SmartShopping;
+			sourceTree = "<group>";
+		};
+		5516C02226103E3100482665 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5516C02326103E4600482665 /* User.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5516C028261045D900482665 /* RegistrationViewController.swift in Sources */,
 				5516C00F26102CDC00482665 /* ViewController.swift in Sources */,
 				5516C00B26102CDC00482665 /* AppDelegate.swift in Sources */,
 				5516C00D26102CDC00482665 /* SceneDelegate.swift in Sources */,
+				5516C02426103E4600482665 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +309,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = YW.SmartShopping;
+				PRODUCT_BUNDLE_IDENTIFIER = YWYW65SmartShopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,7 +328,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = YW.SmartShopping;
+				PRODUCT_BUNDLE_IDENTIFIER = YWYW65SmartShopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
