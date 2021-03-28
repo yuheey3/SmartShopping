@@ -4,7 +4,7 @@
 //
 //  Created by Yuki Waka on 2021-03-27.
 //
-
+//Yuki
 import UIKit
 
 @main
