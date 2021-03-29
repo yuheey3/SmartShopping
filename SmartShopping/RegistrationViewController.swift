@@ -11,8 +11,6 @@ class RegistrationViewController: UIViewController {
     
     let url = URL(string: "https://sundaland.herokuapp.com/api/users")!
     
-    
-    
     @IBOutlet var tfName: UITextField!
     @IBOutlet var tfEmail: UITextField!
     @IBOutlet var tfPassword: UITextField!
@@ -53,9 +51,6 @@ class RegistrationViewController: UIViewController {
                             var check: String
                             check = self.segIsOwner.titleForSegment(at: self.segIsOwner.selectedSegmentIndex)!
                             
-                            //fetch to database
-                            submitToDatabase()
-                            
                             if(check == "Owner"){
                                 newUser.isOwner = true
                             }
@@ -64,6 +59,10 @@ class RegistrationViewController: UIViewController {
                             }
                             
                             print(#function, "Name : \(newUser.name) Email : \(newUser.email) Password : \(newUser.password) isOwner : \(newUser.isOwner)")
+                            
+                            //fetch to database
+                            submitToDatabase()
+                            
                             
                             self.askConfirmation()
                         }else{
@@ -96,8 +95,7 @@ class RegistrationViewController: UIViewController {
     func askConfirmation(){
         let confirmAlert = UIAlertController(title: "Confirmation", message: "Please verify your information to create account.", preferredStyle: .actionSheet)
         
-        confirmAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {_ in //_ in
-            // self.goToShoppingScreen()
+        confirmAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {_ in self.goToLoginPage()
             
         }))
         
@@ -125,6 +123,14 @@ class RegistrationViewController: UIViewController {
         return passwordTest.evaluate(with: password)
     }
     
+    func goToLoginPage(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let loginVC = storyboard.instantiateViewController(identifier: "LoginVC") as! LoginViewController
+        
+        self.navigationController?.pushViewController(loginVC, animated: true)
+        
+    }
     
     func submitToDatabase() {
         
@@ -172,8 +178,6 @@ class RegistrationViewController: UIViewController {
             }
         })
         task.resume()
-        
-        
         
     }
     
