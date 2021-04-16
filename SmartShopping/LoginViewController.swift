@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     var password : String = ""
     var isFoundUser : Bool = true
     
+    var token : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,20 +39,15 @@ class LoginViewController: UIViewController {
             submitToDatabase()
             
             
-           /*
-             
-             
-             
-             
-            //Todo: Check login is successful
-             
-             
-             
-             
-            */
-            if(isFoundUser){
+            do {
+                sleep(3)
+            }
+            
+            if(token != ""){
                 //login successful
                 print("login successful")
+                goToProfilePage()
+                
             } else{
                 //login unsuccessful
                 let alert = UIAlertController(title: "Login unsuccessful", message: "Incorrect email and/or password. Try again!", preferredStyle: .alert)
@@ -68,6 +65,15 @@ class LoginViewController: UIViewController {
         }
         
     }
+    func goToProfilePage(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let profileVC = storyboard.instantiateViewController(identifier: "ProfileVC") as! ProfileViewController
+        profileVC.token = token
+        self.navigationController?.pushViewController(profileVC, animated: true)
+        
+    }
+    
     func submitToDatabase() {
         
         self.isFoundUser = true
@@ -109,7 +115,19 @@ class LoginViewController: UIViewController {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
                     // handle json...\
+            
+                    if let obj = json as? NSDictionary {
+                        
+                        if ((obj["token"]) != nil){
+                            
+                        self.token = obj["token"] as! String
+                        print(self.token)
+                            
+                        }else{
+                            print("eroor!")
+                        }
                     
+                    }
                 }
                 
             } catch let error {

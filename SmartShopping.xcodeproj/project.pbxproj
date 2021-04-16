@@ -15,6 +15,7 @@
 		5516C01726102CDD00482665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516C01526102CDD00482665 /* LaunchScreen.storyboard */; };
 		5516C02426103E4600482665 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516C02326103E4600482665 /* User.swift */; };
 		5516C028261045D900482665 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516C027261045D900482665 /* RegistrationViewController.swift */; };
+		5557943D2629FE23001DCFF0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557943C2629FE23001DCFF0 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5516C01826102CDD00482665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5516C02326103E4600482665 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5516C027261045D900482665 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		5557943C2629FE23001DCFF0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				5516C01526102CDD00482665 /* LaunchScreen.storyboard */,
 				5516C01826102CDD00482665 /* Info.plist */,
 				5516C027261045D900482665 /* RegistrationViewController.swift */,
+				5557943C2629FE23001DCFF0 /* ProfileViewController.swift */,
 			);
 			path = SmartShopping;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5557943D2629FE23001DCFF0 /* ProfileViewController.swift in Sources */,
 				5516C028261045D900482665 /* RegistrationViewController.swift in Sources */,
 				5516C00F26102CDC00482665 /* LoginViewController.swift in Sources */,
 				5516C00B26102CDC00482665 /* AppDelegate.swift in Sources */,
