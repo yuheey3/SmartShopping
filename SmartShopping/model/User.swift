@@ -7,27 +7,49 @@
 
 import Foundation
 
-struct User{
-    var email : String
+struct User : Codable{
     var name : String
+    var email : String
     var password: String
-    var isOwner : Bool
+  //  var isOwner : Bool
+    var userAddress: UserAddress
+    var token : String
+    
     
     init() {
-        self.email = ""
         self.name = ""
+        self.email = ""
         self.password = ""
-        self.isOwner = false
+        self.userAddress = UserAddress()
+        self.token = ""
+      //  self.isOwner = false
+    
+    }
+    
+    init(name : String,email : String, password: String, isOwner: Bool, address: String, userAddress: UserAddress, token: String) {
+        
+        self.name = name
+        self.email = email
+        self.password = password
+       // self.isOwner = isOwner
+        self.userAddress = userAddress
+        self.token = token
      
     }
     
-    init(email : String, name : String, password: String, isOwner: Bool) {
+    struct UserAddress : Codable{
+        var address : String
+        var city : String
+        var postalCode : String
+        var country : String
         
-        self.email = email
-        self.name = name
-        self.password = password
-        self.isOwner = isOwner
-    
+        init(){
+            self.address = ""
+            self.city = ""
+            self.postalCode = ""
+            self.country = ""
+            
+        }
     }
 }
 

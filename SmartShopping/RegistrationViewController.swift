@@ -16,6 +16,10 @@ class RegistrationViewController: UIViewController {
     @IBOutlet var tfPassword: UITextField!
     @IBOutlet var tfConfirmPassword: UITextField!
     @IBOutlet var segIsOwner : UISegmentedControl!
+    @IBOutlet var tfAddress : UITextField!
+    @IBOutlet var tfCity : UITextField!
+    @IBOutlet var tfPostalCode : UITextField!
+    @IBOutlet var tfCountry : UITextField!
     var newUser = User()
     
     override func viewDidLoad() {
@@ -34,7 +38,7 @@ class RegistrationViewController: UIViewController {
     
     @IBAction func createAccount(){
         
-        if (!self.tfEmail.text!.isEmpty && !self.tfName.text!.isEmpty && !self.tfPassword.text!.isEmpty && !self.tfConfirmPassword.text!.isEmpty) {
+        if (!self.tfEmail.text!.isEmpty && !self.tfName.text!.isEmpty && !self.tfPassword.text!.isEmpty && !self.tfConfirmPassword.text!.isEmpty && !self.tfAddress.text!.isEmpty && !self.tfCity.text!.isEmpty && !self.tfPostalCode.text!.isEmpty && !self.tfCountry.text!.isEmpty) {
             
             if (self.tfPassword.text == self.tfConfirmPassword.text){
                 
@@ -47,18 +51,23 @@ class RegistrationViewController: UIViewController {
                             newUser.name = self.tfName.text!
                             newUser.email = self.tfEmail.text!
                             newUser.password = self.tfPassword.text!
+                          
+                            newUser.userAddress.address = self.tfAddress.text!
+                            newUser.userAddress.city = self.tfCity.text!
+                            newUser.userAddress.postalCode = self.tfPostalCode.text!
+                            newUser.userAddress.country = self.tfCountry.text!
                             
-                            var check: String
-                            check = self.segIsOwner.titleForSegment(at: self.segIsOwner.selectedSegmentIndex)!
+//                            var check: String
+//                            check = self.segIsOwner.titleForSegment(at: self.segIsOwner.selectedSegmentIndex)!
+//
+//                            if(check == "Owner"){
+//                                newUser.isOwner = true
+//                            }
+//                            else{
+//                                newUser.isOwner = false
+//                            }
                             
-                            if(check == "Owner"){
-                                newUser.isOwner = true
-                            }
-                            else{
-                                newUser.isOwner = false
-                            }
-                            
-                            print(#function, "Name : \(newUser.name) Email : \(newUser.email) Password : \(newUser.password) isOwner : \(newUser.isOwner)")
+                            print(#function, "Name : \(newUser.name) Email : \(newUser.email) Password : \(newUser.password) Address: \(newUser.userAddress.address)")
                             
                             //fetch to database
                             submitToDatabase()
@@ -133,52 +142,58 @@ class RegistrationViewController: UIViewController {
     }
     
     func submitToDatabase() {
-        
+
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
-        
-        let parameters = ["name": newUser.name, "password": newUser.password, "email" : newUser.email] as Dictionary<String, String>
-        
+
+        let parameters = ["name": newUser.name,"email" : newUser.email, "password": newUser.password, "userAddress" : ["address" : newUser.userAddress.address, "city" : newUser.userAddress.city, "postalCode" : newUser.userAddress.postalCode, "country" : newUser.userAddress.country]] as Dictionary<String, AnyObject>
+
         //create the session object
         let session = URLSession.shared
-        
+
         //now create the URLRequest object using the url object
         var request = URLRequest(url: url)
         request.httpMethod = "POST" //set http method as POST
-        
+
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
-            
+
         } catch let error {
             print(error.localizedDescription)
         }
-        
+
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
+
         //create dataTask using the session object to send data to the server
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-            
+
             guard error == nil else {
                 return
             }
-            
+
             guard let data = data else {
                 return
             }
-            
+
             do {
                 //create json object from data
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
+                    
+                    
+                 
+                    
+             
                     // handle json...
                 }
-                
+
             } catch let error {
                 print(error.localizedDescription)
             }
         })
         task.resume()
-        
+
     }
-    
+        
+
 }
