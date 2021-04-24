@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OlS-5Q-m8p">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--To Do Table View Controller-->
+        <scene sceneID="FCH-9Z-7pD">
+            <objects>
+                <tableViewController storyboardIdentifier="ToDoTVC" id="CVQ-N5-THK" customClass="ToDoTableViewController" customModule="TheToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5za-fq-tR2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_todo" rowHeight="75" id="sMe-LY-0Fw" customClass="ToDoCell" customModule="TheToDo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sMe-LY-0Fw" id="Bri-rT-1Wx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW2-SI-JIg">
+                                            <rect key="frame" x="30" y="16" width="354" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" name="AccentColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FF-4h-ksJ">
+                                            <rect key="frame" x="30" y="45" width="354" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WW2-SI-JIg" firstAttribute="leading" secondItem="Bri-rT-1Wx" secondAttribute="leadingMargin" constant="10" id="LdM-7g-aNW"/>
+                                        <constraint firstItem="6FF-4h-ksJ" firstAttribute="leading" secondItem="Bri-rT-1Wx" secondAttribute="leadingMargin" constant="10" id="R0B-OO-KKu"/>
+                                        <constraint firstItem="6FF-4h-ksJ" firstAttribute="top" secondItem="WW2-SI-JIg" secondAttribute="bottom" constant="5" id="XGX-hw-v4E"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="WW2-SI-JIg" secondAttribute="trailing" constant="10" id="Zbb-It-Icp"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6FF-4h-ksJ" secondAttribute="trailing" constant="10" id="n8O-NF-JzJ"/>
+                                        <constraint firstItem="WW2-SI-JIg" firstAttribute="top" secondItem="Bri-rT-1Wx" secondAttribute="topMargin" constant="5" id="tbQ-UG-tZo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblDetail" destination="6FF-4h-ksJ" id="Ye6-P7-X4Z"/>
+                                    <outlet property="lblTitle" destination="WW2-SI-JIg" id="LkW-uV-nCD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CVQ-N5-THK" id="5lT-mK-XdS"/>
+                            <outlet property="delegate" destination="CVQ-N5-THK" id="DNW-sx-TnA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HJm-ue-epy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8eX-aQ-DH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="127"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DFi-7Y-nEb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OlS-5Q-m8p" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b0F-zr-FLm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CVQ-N5-THK" kind="relationship" relationship="rootViewController" id="OCP-yD-hlO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4Q-UL-Aa6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
