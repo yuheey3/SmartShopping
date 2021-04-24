@@ -284,11 +284,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkz-rf-4ZG">
+                                <rect key="frame" x="91" y="542" width="232" height="50"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KJj-jS-pba"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Update Profile">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToUpdateProfile" destination="sOo-b4-C1V" eventType="touchUpInside" id="nF1-N5-CWI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fod-5g-eHp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hGo-YP-mv0" firstAttribute="top" secondItem="WAh-2o-SP7" secondAttribute="bottom" constant="20" id="0qs-JS-YET"/>
+                            <constraint firstItem="Wkz-rf-4ZG" firstAttribute="leading" secondItem="Fod-5g-eHp" secondAttribute="leading" constant="91" id="0sj-Uu-Lq2"/>
                             <constraint firstItem="NcK-yv-H92" firstAttribute="leading" secondItem="Fod-5g-eHp" secondAttribute="leading" constant="40" id="2qO-AF-fvd"/>
                             <constraint firstItem="hGo-YP-mv0" firstAttribute="leading" secondItem="Fod-5g-eHp" secondAttribute="leading" constant="40" id="3fJ-f2-un3"/>
                             <constraint firstItem="RPc-2y-BMg" firstAttribute="leading" secondItem="Fod-5g-eHp" secondAttribute="leading" constant="40" id="AQx-qK-awe"/>
@@ -302,8 +317,10 @@
                             <constraint firstItem="Fod-5g-eHp" firstAttribute="trailing" secondItem="RPc-2y-BMg" secondAttribute="trailing" constant="40" id="dpe-p4-Adr"/>
                             <constraint firstItem="xGt-jR-KWK" firstAttribute="leading" secondItem="Fod-5g-eHp" secondAttribute="leading" constant="173" id="e8c-15-zva"/>
                             <constraint firstItem="xGt-jR-KWK" firstAttribute="top" secondItem="Fod-5g-eHp" secondAttribute="top" constant="77" id="eYN-ge-oBE"/>
+                            <constraint firstItem="Fod-5g-eHp" firstAttribute="bottom" secondItem="Wkz-rf-4ZG" secondAttribute="bottom" constant="270" id="i3x-nI-8P8"/>
                             <constraint firstItem="Fod-5g-eHp" firstAttribute="trailing" secondItem="NcK-yv-H92" secondAttribute="trailing" constant="40" id="jk6-eC-Pqg"/>
                             <constraint firstItem="RPc-2y-BMg" firstAttribute="top" secondItem="0KE-HS-VxS" secondAttribute="bottom" constant="20" id="k0i-sv-F98"/>
+                            <constraint firstItem="Wkz-rf-4ZG" firstAttribute="centerX" secondItem="hGo-YP-mv0" secondAttribute="centerX" id="poD-D7-i1D"/>
                             <constraint firstItem="NcK-yv-H92" firstAttribute="top" secondItem="zLs-g9-8DE" secondAttribute="bottom" constant="20" id="qdz-tv-hnK"/>
                             <constraint firstItem="Fod-5g-eHp" firstAttribute="trailing" secondItem="xGt-jR-KWK" secondAttribute="trailing" constant="173" id="r4q-kL-JOv"/>
                             <constraint firstItem="WAh-2o-SP7" firstAttribute="top" secondItem="RPc-2y-BMg" secondAttribute="bottom" constant="20" id="tpE-rj-jvD"/>
@@ -323,6 +340,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sy-84-PRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2650.7246376811595" y="83.705357142857139"/>
+        </scene>
+        <!--Update Profile View Controller-->
+        <scene sceneID="rLp-p8-NbD">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgh-9s-Awo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="UpdateProfileVC" id="KLs-YO-4wI" customClass="UpdateProfileViewController" customModule="SmartShopping" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8hj-dV-szW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcA-Zj-fZF">
+                                <rect key="frame" x="67" y="244" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tfN-dQ-EYN">
+                                <rect key="frame" x="67" y="308" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postal Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5v0-SG-hNb">
+                                <rect key="frame" x="67" y="372" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E6c-kF-7uS">
+                                <rect key="frame" x="67" y="436" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfm-q5-XpI">
+                                <rect key="frame" x="91" y="600" width="232" height="50"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="osE-v6-ljk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateProfile" destination="KLs-YO-4wI" eventType="touchUpInside" id="Wsd-QR-dvE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D6G-nI-yOJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gfm-q5-XpI" firstAttribute="leading" secondItem="D6G-nI-yOJ" secondAttribute="leading" constant="91" id="1ja-YC-fQe"/>
+                            <constraint firstItem="5v0-SG-hNb" firstAttribute="top" secondItem="tfN-dQ-EYN" secondAttribute="bottom" constant="30" id="6MT-JB-81a"/>
+                            <constraint firstItem="E6c-kF-7uS" firstAttribute="top" secondItem="5v0-SG-hNb" secondAttribute="bottom" constant="30" id="9II-RM-AZf"/>
+                            <constraint firstItem="E6c-kF-7uS" firstAttribute="leading" secondItem="D6G-nI-yOJ" secondAttribute="leading" constant="67" id="9Re-5q-DIH"/>
+                            <constraint firstItem="5v0-SG-hNb" firstAttribute="leading" secondItem="D6G-nI-yOJ" secondAttribute="leading" constant="67" id="Apt-YR-rUL"/>
+                            <constraint firstItem="D6G-nI-yOJ" firstAttribute="trailing" secondItem="wcA-Zj-fZF" secondAttribute="trailing" constant="67" id="FeH-8f-yWC"/>
+                            <constraint firstItem="wcA-Zj-fZF" firstAttribute="leading" secondItem="D6G-nI-yOJ" secondAttribute="leading" constant="67" id="ReH-qO-lEg"/>
+                            <constraint firstItem="D6G-nI-yOJ" firstAttribute="trailing" secondItem="tfN-dQ-EYN" secondAttribute="trailing" constant="67" id="Y5u-FZ-JIN"/>
+                            <constraint firstItem="tfN-dQ-EYN" firstAttribute="top" secondItem="wcA-Zj-fZF" secondAttribute="bottom" constant="30" id="cdC-M1-zFp"/>
+                            <constraint firstItem="D6G-nI-yOJ" firstAttribute="trailing" secondItem="E6c-kF-7uS" secondAttribute="trailing" constant="67" id="eXa-7a-TE6"/>
+                            <constraint firstItem="wcA-Zj-fZF" firstAttribute="top" secondItem="D6G-nI-yOJ" secondAttribute="top" constant="200" id="p1F-Aj-4Pd"/>
+                            <constraint firstItem="D6G-nI-yOJ" firstAttribute="trailing" secondItem="Gfm-q5-XpI" secondAttribute="trailing" constant="91" id="uRP-Hk-bQx"/>
+                            <constraint firstItem="D6G-nI-yOJ" firstAttribute="trailing" secondItem="5v0-SG-hNb" secondAttribute="trailing" constant="67" id="vXK-hl-B0K"/>
+                            <constraint firstItem="Gfm-q5-XpI" firstAttribute="top" secondItem="E6c-kF-7uS" secondAttribute="bottom" constant="130" id="vpR-lt-Koq"/>
+                            <constraint firstItem="tfN-dQ-EYN" firstAttribute="leading" secondItem="D6G-nI-yOJ" secondAttribute="leading" constant="67" id="wW1-ZH-Qe1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tfAddress" destination="wcA-Zj-fZF" id="tQV-EG-edL"/>
+                        <outlet property="tfCity" destination="tfN-dQ-EYN" id="9GI-rD-gTW"/>
+                        <outlet property="tfCountry" destination="E6c-kF-7uS" id="pct-yh-KbA"/>
+                        <outlet property="tfPostalCode" destination="5v0-SG-hNb" id="SGS-cx-DXh"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3665" y="84"/>
         </scene>
     </scenes>
     <resources>

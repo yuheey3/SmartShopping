@@ -21,8 +21,8 @@ class ProfileViewController: UIViewController {
     var city : String = ""
     var postalCode : String = ""
     var country : String = ""
-  //  var name : String = ""
-   // var name : String = ""
+    //  var name : String = ""
+    // var name : String = ""
     
     
     
@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Profile"
-     
+        
         
         submitToDatabase()
         
@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController {
         
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
         
-       // let parameters = ["token": token] as Dictionary<String, String>
+        // let parameters = ["token": token] as Dictionary<String, String>
         
         //create the session object
         let session = URLSession.shared
@@ -70,32 +70,35 @@ class ProfileViewController: UIViewController {
             do {
                 //create json object from data
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] , let userAddress = json["userAddress"] as? [String : Any]
-               {
+                {
                     print(json)
                     
                     if let obj = json as? NSDictionary {
                         
-                    
+                        
                         self.name = obj["name"] as! String
                         self.email = obj["email"] as! String
                         
                         if let obj2 = userAddress as? NSDictionary{
-                       
-                        self.address = obj2["address"] as! String
-                        self.city = obj2["city"] as! String
-                        self.postalCode = obj2["postalCode"] as! String
-                        self.country = obj2["country"] as! String
                             
-                        self.tfName.text = self.name
-                        self.tfEmail.text = self.email
-                        self.tfAddress.text = self.address
-                        self.tfCity.text = self.city
-                        self.tfpostalCode.text = self.postalCode
-                        self.tfCountry.text = self.country
+                            self.address = obj2["address"] as! String
+                            self.city = obj2["city"] as! String
+                            self.postalCode = obj2["postalCode"] as! String
+                            self.country = obj2["country"] as! String
+                            
+                            DispatchQueue.main.async {
+                                self.tfName.text = self.name
+                                self.tfEmail.text = self.email
+                                self.tfAddress.text = self.address
+                                self.tfCity.text = self.city
+                                self.tfpostalCode.text = self.postalCode
+                                self.tfCountry.text = self.country
+                                
+                            }
                         }
                     }
                 }
-                    
+                
                 
                 
             }catch let error {
@@ -106,5 +109,18 @@ class ProfileViewController: UIViewController {
         
     }
     
-
+    
+    @IBAction func goToUpdateProfile(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let updateProfileVC = storyboard.instantiateViewController(identifier: "UpdateProfileVC") as! UpdateProfileViewController
+        
+        updateProfileVC.token = token
+        
+        self.navigationController?.pushViewController(updateProfileVC, animated: true)
+        
+        
+    }
+    
+    
 }

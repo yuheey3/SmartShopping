@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
             
             
             do {
-                sleep(3)
+                sleep(4)
             }
             
             if(token != ""){
