@@ -17,6 +17,9 @@
 		5516C028261045D900482665 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516C027261045D900482665 /* RegistrationViewController.swift */; };
 		5557943D2629FE23001DCFF0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557943C2629FE23001DCFF0 /* ProfileViewController.swift */; };
 		5557949426338FC0001DCFF0 /* UpdateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557949326338FC0001DCFF0 /* UpdateProfile.swift */; };
+		555794C4263C8867001DCFF0 /* AllStoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794C3263C8867001DCFF0 /* AllStoresTableViewController.swift */; };
+		555794C8263C8BDE001DCFF0 /* AllStoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794C7263C8BDE001DCFF0 /* AllStoresCell.swift */; };
+		555794CB263C8D19001DCFF0 /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794CA263C8D18001DCFF0 /* Stores.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		5516C027261045D900482665 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		5557943C2629FE23001DCFF0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5557949326338FC0001DCFF0 /* UpdateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfile.swift; sourceTree = "<group>"; };
+		555794C3263C8867001DCFF0 /* AllStoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStoresTableViewController.swift; sourceTree = "<group>"; };
+		555794C7263C8BDE001DCFF0 /* AllStoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStoresCell.swift; sourceTree = "<group>"; };
+		555794CA263C8D18001DCFF0 /* Stores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5516C02326103E4600482665 /* User.swift */,
+				555794CA263C8D18001DCFF0 /* Stores.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -91,6 +98,8 @@
 				5516C027261045D900482665 /* RegistrationViewController.swift */,
 				5516C00E26102CDC00482665 /* LoginViewController.swift */,
 				5557949326338FC0001DCFF0 /* UpdateProfile.swift */,
+				555794C3263C8867001DCFF0 /* AllStoresTableViewController.swift */,
+				555794C7263C8BDE001DCFF0 /* AllStoresCell.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -170,6 +179,9 @@
 				5557949426338FC0001DCFF0 /* UpdateProfile.swift in Sources */,
 				5516C00F26102CDC00482665 /* LoginViewController.swift in Sources */,
 				5516C00B26102CDC00482665 /* AppDelegate.swift in Sources */,
+				555794CB263C8D19001DCFF0 /* Stores.swift in Sources */,
+				555794C8263C8BDE001DCFF0 /* AllStoresCell.swift in Sources */,
+				555794C4263C8867001DCFF0 /* AllStoresTableViewController.swift in Sources */,
 				5516C00D26102CDC00482665 /* SceneDelegate.swift in Sources */,
 				5516C02426103E4600482665 /* User.swift in Sources */,
 			);

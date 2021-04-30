@@ -123,4 +123,17 @@ class ProfileViewController: UIViewController {
     }
     
     
+    @IBAction func goToAllAtores(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let allStoresVC = storyboard.instantiateViewController(identifier: "AllStoresVC") as! AllStoresTableViewController
+        
+        allStoresVC.token = token
+        
+        self.navigationController?.pushViewController(allStoresVC, animated: true)
+        
+        
+    }
+    
+    
 }
