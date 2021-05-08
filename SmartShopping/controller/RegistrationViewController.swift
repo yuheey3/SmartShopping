@@ -57,15 +57,15 @@ class RegistrationViewController: UIViewController {
                             newUser.userAddress.postalCode = self.tfPostalCode.text!
                             newUser.userAddress.country = self.tfCountry.text!
                             
-//                            var check: String
-//                            check = self.segIsOwner.titleForSegment(at: self.segIsOwner.selectedSegmentIndex)!
-//
-//                            if(check == "Owner"){
-//                                newUser.isOwner = true
-//                            }
-//                            else{
-//                                newUser.isOwner = false
-//                            }
+                            var check: String
+                            check = self.segIsOwner.titleForSegment(at: self.segIsOwner.selectedSegmentIndex)!
+
+                            if(check == "Owner"){
+                                newUser.isOwner = true
+                            }
+                            else{
+                                newUser.isOwner = false
+                            }
                             
                             print(#function, "Name : \(newUser.name) Email : \(newUser.email) Password : \(newUser.password) Address: \(newUser.userAddress.address)")
                             
@@ -145,7 +145,7 @@ class RegistrationViewController: UIViewController {
 
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
 
-        let parameters = ["name": newUser.name,"email" : newUser.email, "password": newUser.password, "userAddress" : ["address" : newUser.userAddress.address, "city" : newUser.userAddress.city, "postalCode" : newUser.userAddress.postalCode, "country" : newUser.userAddress.country]] as Dictionary<String, AnyObject>
+        let parameters = ["name": newUser.name,"email" : newUser.email, "password": newUser.password, "isOwner": newUser.isOwner, "userAddress" : ["address" : newUser.userAddress.address, "city" : newUser.userAddress.city, "postalCode" : newUser.userAddress.postalCode, "country" : newUser.userAddress.country]] as Dictionary<String, AnyObject>
 
         //create the session object
         let session = URLSession.shared

@@ -7,13 +7,14 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class UserProfileViewController: UIViewController {
     @IBOutlet var tfName: UILabel!
     @IBOutlet var tfEmail: UILabel!
     @IBOutlet var tfAddress : UILabel!
     @IBOutlet var tfCity: UILabel!
     @IBOutlet var tfpostalCode: UILabel!
     @IBOutlet var tfCountry : UILabel!
+    @IBOutlet var tfIsOwner : UILabel!
     var token : String = ""
     var name : String = ""
     var email : String = ""
@@ -21,8 +22,8 @@ class ProfileViewController: UIViewController {
     var city : String = ""
     var postalCode : String = ""
     var country : String = ""
-    //  var name : String = ""
-    // var name : String = ""
+    var isOwner : Bool = false
+    
     
     
     
@@ -78,6 +79,7 @@ class ProfileViewController: UIViewController {
                         
                         self.name = obj["name"] as! String
                         self.email = obj["email"] as! String
+                        self.isOwner = obj["isOwner"] as! Bool
                         
                         if let obj2 = userAddress as? NSDictionary{
                             
@@ -87,12 +89,23 @@ class ProfileViewController: UIViewController {
                             self.country = obj2["country"] as! String
                             
                             DispatchQueue.main.async {
-                                self.tfName.text = self.name
+                                var tmp : String = ""
+                                if(self.isOwner){
+                                    tmp = " Owner"
+                                  
+                                }
+                                else{
+                                    tmp = " Customer"
+                                }
+                                print(tmp)
+                                self.tfName.text = "Hi " + self.name + tmp + " !"
                                 self.tfEmail.text = self.email
                                 self.tfAddress.text = self.address
                                 self.tfCity.text = self.city
                                 self.tfpostalCode.text = self.postalCode
                                 self.tfCountry.text = self.country
+                                
+                              
                                 
                             }
                         }
@@ -116,6 +129,7 @@ class ProfileViewController: UIViewController {
         let updateProfileVC = storyboard.instantiateViewController(identifier: "UpdateProfileVC") as! UpdateProfileViewController
         
         updateProfileVC.token = token
+        updateProfileVC.isOwner = false
         
         self.navigationController?.pushViewController(updateProfileVC, animated: true)
         
@@ -131,6 +145,18 @@ class ProfileViewController: UIViewController {
         allStoresVC.token = token
         
         self.navigationController?.pushViewController(allStoresVC, animated: true)
+        
+        
+    }
+    
+    @IBAction func goToSubscribedStores(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let subscribedStoresVC = storyboard.instantiateViewController(identifier: "SubscribedStoresVC") as! SubscribedStoresTableViewController
+        
+        subscribedStoresVC.token = token
+        
+        self.navigationController?.pushViewController(subscribedStoresVC, animated: true)
         
         
     }

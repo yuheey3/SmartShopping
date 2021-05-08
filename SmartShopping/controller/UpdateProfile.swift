@@ -12,6 +12,7 @@ class UpdateProfileViewController: UIViewController {
     let url = URL(string: "https://sundaland.herokuapp.com/api/users/profile")!
     
     var token : String = ""
+    var isOwner : Bool = false
     
     
     @IBOutlet var tfAddress: UITextField!
@@ -143,10 +144,18 @@ class UpdateProfileViewController: UIViewController {
     
     func goToProfilePage(){
         
+        if(!isOwner){
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let profileVC = storyboard.instantiateViewController(identifier: "ProfileVC") as! ProfileViewController
+        let profileVC = storyboard.instantiateViewController(identifier: "ProfileVC") as! UserProfileViewController
         profileVC.token = token
         self.navigationController?.pushViewController(profileVC, animated: true)
+        
+        }else{
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let profileVC = storyboard.instantiateViewController(identifier: "OwnerProfileVC") as! OwnerProfileViewController
+            profileVC.token = token
+            self.navigationController?.pushViewController(profileVC, animated: true)
+        }
         
     }
     

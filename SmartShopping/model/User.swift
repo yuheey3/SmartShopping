@@ -11,7 +11,7 @@ struct User : Codable{
     var name : String
     var email : String
     var password: String
-  //  var isOwner : Bool
+    var isOwner : Bool
     var userAddress: UserAddress
     var token : String
     
@@ -22,7 +22,7 @@ struct User : Codable{
         self.password = ""
         self.userAddress = UserAddress()
         self.token = ""
-      //  self.isOwner = false
+        self.isOwner = false
     
     }
     
@@ -31,7 +31,7 @@ struct User : Codable{
         self.name = name
         self.email = email
         self.password = password
-       // self.isOwner = isOwner
+        self.isOwner = isOwner
         self.userAddress = userAddress
         self.token = token
      

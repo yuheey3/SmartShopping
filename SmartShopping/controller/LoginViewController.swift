@@ -16,13 +16,16 @@ class LoginViewController: UIViewController {
     var email : String = ""
     var password : String = ""
     var isFoundUser : Bool = true
+    var isOwner : Bool = false
     
     var token : String = ""
     
     override func viewDidLoad() {
+      
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Log in"
+      
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -40,13 +43,15 @@ class LoginViewController: UIViewController {
             
             
             do {
-                sleep(4)
+                sleep(5)
             }
             
             if(token != ""){
                 //login successful
                 print("login successful")
                 goToProfilePage()
+                self.tfEmail.text = ""
+                self.tfPassword.text = ""
                 
             } else{
                 //login unsuccessful
@@ -68,9 +73,17 @@ class LoginViewController: UIViewController {
     func goToProfilePage(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let profileVC = storyboard.instantiateViewController(identifier: "ProfileVC") as! ProfileViewController
-        profileVC.token = token
-        self.navigationController?.pushViewController(profileVC, animated: true)
+        if(!isOwner){
+            let profileVC = storyboard.instantiateViewController(identifier: "ProfileVC") as! UserProfileViewController
+            profileVC.token = token
+            self.navigationController?.pushViewController(profileVC, animated: true)
+            
+        }else{
+            let ownerProfileVC = storyboard.instantiateViewController(identifier: "OwnerProfileVC") as! OwnerProfileViewController
+            ownerProfileVC.token = token
+            self.navigationController?.pushViewController(ownerProfileVC, animated: true)
+            
+        }
         
     }
     
@@ -114,19 +127,24 @@ class LoginViewController: UIViewController {
                 //create json object from data
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
-                    // handle json...\
-            
+                    // handle json...
+                    
+                    
                     if let obj = json as? NSDictionary {
+                        
+                        self.isOwner = obj["isOwner"] as! Bool
                         
                         if ((obj["token"]) != nil){
                             
-                        self.token = obj["token"] as! String
-                        print(self.token)
+                            self.token = obj["token"] as! String
+                            print(self.token)
+                            
+                            
                             
                         }else{
                             print("eroor!")
                         }
-                    
+                        
                     }
                 }
                 
