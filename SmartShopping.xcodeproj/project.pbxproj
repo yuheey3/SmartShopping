@@ -23,6 +23,7 @@
 		555794CF2645FC96001DCFF0 /* SubscribedStoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794CE2645FC96001DCFF0 /* SubscribedStoresCell.swift */; };
 		555794D22645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794D12645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift */; };
 		555794D626461793001DCFF0 /* OwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794D526461793001DCFF0 /* OwnerProfileViewController.swift */; };
+		55579507264F2D32001DCFF0 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55579506264F2D32001DCFF0 /* AddStoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		555794CE2645FC96001DCFF0 /* SubscribedStoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribedStoresCell.swift; sourceTree = "<group>"; };
 		555794D12645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribedStoresTableViewController.swift; sourceTree = "<group>"; };
 		555794D526461793001DCFF0 /* OwnerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewController.swift; sourceTree = "<group>"; };
+		55579506264F2D32001DCFF0 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				555794CE2645FC96001DCFF0 /* SubscribedStoresCell.swift */,
 				555794D12645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift */,
 				555794D526461793001DCFF0 /* OwnerProfileViewController.swift */,
+				55579506264F2D32001DCFF0 /* AddStoreViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				5557949426338FC0001DCFF0 /* UpdateProfile.swift in Sources */,
 				5516C00F26102CDC00482665 /* LoginViewController.swift in Sources */,
 				5516C00B26102CDC00482665 /* AppDelegate.swift in Sources */,
+				55579507264F2D32001DCFF0 /* AddStoreViewController.swift in Sources */,
 				555794CB263C8D19001DCFF0 /* Stores.swift in Sources */,
 				555794C8263C8BDE001DCFF0 /* AllStoresCell.swift in Sources */,
 				555794C4263C8867001DCFF0 /* AllStoresTableViewController.swift in Sources */,

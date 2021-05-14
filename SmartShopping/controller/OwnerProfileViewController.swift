@@ -150,6 +150,17 @@ class OwnerProfileViewController: UIViewController {
         
     }
     
+    @IBAction func goToAddStore(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let addStoreVC = storyboard.instantiateViewController(identifier: "AddStoreVC") as! AddStoreViewController
+        
+        addStoreVC.token = token
+        
+        self.navigationController?.pushViewController(addStoreVC, animated: true)
+        
+        
+    }
    
     
     
