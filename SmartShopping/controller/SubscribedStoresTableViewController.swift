@@ -16,6 +16,7 @@ class SubscribedStoresTableViewController: UITableViewController {
     var name = ""
     var storeId : String = ""
     
+    
     override func viewDidLoad() {
         submitToDatabase()
         super.viewDidLoad()

@@ -951,6 +951,112 @@
             </objects>
             <point key="canvasLocation" x="6581.1594202898559" y="83.705357142857139"/>
         </scene>
+        <!--Store Detail View Controller-->
+        <scene sceneID="WRk-Ox-E6c">
+            <objects>
+                <viewController storyboardIdentifier="StoreDetailVC" id="aRt-E7-Qld" customClass="StoreDetailViewController" customModule="SmartShopping" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JYC-Vf-trA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaW-jy-0LC">
+                                <rect key="frame" x="42" y="220" width="337" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="g2P-l7-apq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gM-Nf-qAD">
+                                <rect key="frame" x="42" y="332" width="326" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1UE-hE-CWG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PostalCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fx-s8-DRZ">
+                                <rect key="frame" x="42" y="257" width="352" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Dl7-3k-xek"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StreetAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thK-wE-8bq">
+                                <rect key="frame" x="42" y="186" width="328" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Wzv-le-Paw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Province" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z55-WA-6Ez">
+                                <rect key="frame" x="42" y="293" width="341" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="qdS-tO-qqH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOQ-9z-OyK">
+                                <rect key="frame" x="77" y="120" width="260" height="48"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="23"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="swm-v8-yya">
+                                <rect key="frame" x="301" y="109" width="78" height="48"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M0I-D5-XyK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="z55-WA-6Ez" firstAttribute="top" secondItem="7fx-s8-DRZ" secondAttribute="bottom" constant="8" symbolic="YES" id="05P-5u-lBY"/>
+                            <constraint firstItem="thK-wE-8bq" firstAttribute="leading" secondItem="KaW-jy-0LC" secondAttribute="leading" id="7QC-Fg-I2H"/>
+                            <constraint firstItem="thK-wE-8bq" firstAttribute="leading" secondItem="M0I-D5-XyK" secondAttribute="leading" constant="42" id="9Eh-2G-WIK"/>
+                            <constraint firstItem="swm-v8-yya" firstAttribute="top" secondItem="M0I-D5-XyK" secondAttribute="top" constant="21.5" id="BsT-we-4EL"/>
+                            <constraint firstItem="swm-v8-yya" firstAttribute="leading" secondItem="M0I-D5-XyK" secondAttribute="leading" constant="301" id="EhE-za-X1O"/>
+                            <constraint firstItem="KaW-jy-0LC" firstAttribute="top" secondItem="thK-wE-8bq" secondAttribute="bottom" constant="8" symbolic="YES" id="F18-W1-hMD"/>
+                            <constraint firstItem="thK-wE-8bq" firstAttribute="top" secondItem="swm-v8-yya" secondAttribute="bottom" constant="28.5" id="MN9-iU-4kM"/>
+                            <constraint firstItem="z55-WA-6Ez" firstAttribute="leading" secondItem="6gM-Nf-qAD" secondAttribute="leading" id="NR8-z2-HxA"/>
+                            <constraint firstItem="swm-v8-yya" firstAttribute="trailing" secondItem="KaW-jy-0LC" secondAttribute="trailing" id="QzJ-HV-RDB"/>
+                            <constraint firstItem="wOQ-9z-OyK" firstAttribute="leading" secondItem="M0I-D5-XyK" secondAttribute="leading" constant="77" id="Swe-Id-Gh4"/>
+                            <constraint firstItem="M0I-D5-XyK" firstAttribute="bottom" secondItem="6gM-Nf-qAD" secondAttribute="bottom" constant="500" id="VI9-1t-jkM"/>
+                            <constraint firstItem="wOQ-9z-OyK" firstAttribute="top" secondItem="M0I-D5-XyK" secondAttribute="top" constant="32" id="X2J-X8-K77"/>
+                            <constraint firstItem="6gM-Nf-qAD" firstAttribute="top" secondItem="z55-WA-6Ez" secondAttribute="bottom" constant="8" symbolic="YES" id="aXM-zt-ka7"/>
+                            <constraint firstItem="M0I-D5-XyK" firstAttribute="trailing" secondItem="KaW-jy-0LC" secondAttribute="trailing" constant="35" id="bpf-u6-OWB"/>
+                            <constraint firstItem="M0I-D5-XyK" firstAttribute="trailing" secondItem="z55-WA-6Ez" secondAttribute="trailing" constant="31" id="eAq-3Y-mb1"/>
+                            <constraint firstItem="KaW-jy-0LC" firstAttribute="leading" secondItem="7fx-s8-DRZ" secondAttribute="leading" id="eHV-ai-hNe"/>
+                            <constraint firstItem="wOQ-9z-OyK" firstAttribute="centerX" secondItem="JYC-Vf-trA" secondAttribute="centerX" id="iD9-Oe-wdR"/>
+                            <constraint firstItem="thK-wE-8bq" firstAttribute="top" secondItem="wOQ-9z-OyK" secondAttribute="bottom" constant="18" id="lIW-N8-L9D"/>
+                            <constraint firstItem="7fx-s8-DRZ" firstAttribute="leading" secondItem="z55-WA-6Ez" secondAttribute="leading" id="lkX-Kf-fTf"/>
+                            <constraint firstItem="7fx-s8-DRZ" firstAttribute="trailing" secondItem="JYC-Vf-trA" secondAttribute="trailingMargin" id="nWp-FI-k0z"/>
+                            <constraint firstItem="M0I-D5-XyK" firstAttribute="trailing" secondItem="6gM-Nf-qAD" secondAttribute="trailing" constant="46" id="pVZ-WY-aMa"/>
+                            <constraint firstItem="7fx-s8-DRZ" firstAttribute="top" secondItem="KaW-jy-0LC" secondAttribute="bottom" constant="8" symbolic="YES" id="sSE-9y-SgB"/>
+                            <constraint firstItem="M0I-D5-XyK" firstAttribute="trailing" secondItem="thK-wE-8bq" secondAttribute="trailing" constant="44" id="tiO-g9-JXb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WVw-zb-YpY"/>
+                    <connections>
+                        <outlet property="imageView" destination="swm-v8-yya" id="Dyi-jN-IvW"/>
+                        <outlet property="lblCity" destination="KaW-jy-0LC" id="jHl-JY-kVU"/>
+                        <outlet property="lblCountry" destination="6gM-Nf-qAD" id="SEe-PO-OD6"/>
+                        <outlet property="lblName" destination="wOQ-9z-OyK" id="A5T-RC-2Cz"/>
+                        <outlet property="lblPostalCode" destination="7fx-s8-DRZ" id="xxR-fp-g2Z"/>
+                        <outlet property="lblProvince" destination="z55-WA-6Ez" id="VES-Sf-E1O"/>
+                        <outlet property="lblStreetAddress" destination="thK-wE-8bq" id="wbs-rR-hSh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtt-CK-4XG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7726.0869565217399" y="752.67857142857144"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dak-vC-Bgx">
             <objects>
@@ -1005,8 +1111,42 @@
             </objects>
             <point key="canvasLocation" x="4965.217391304348" y="752.67857142857144"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="92v-qy-kZd">
+            <objects>
+                <viewController id="M1o-Ev-Q6h" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bBz-sT-mBI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NhX-2D-srU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCm-qJ-jMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6484" y="-589"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m2p-cr-rxF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xkE-eb-MjY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X5O-md-tfr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aRt-E7-Qld" kind="relationship" relationship="rootViewController" id="tt6-YL-RTg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcX-Bk-eG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6815.9420289855079" y="752.67857142857144"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

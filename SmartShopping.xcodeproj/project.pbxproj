@@ -24,6 +24,7 @@
 		555794D22645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794D12645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift */; };
 		555794D626461793001DCFF0 /* OwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794D526461793001DCFF0 /* OwnerProfileViewController.swift */; };
 		55579507264F2D32001DCFF0 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55579506264F2D32001DCFF0 /* AddStoreViewController.swift */; };
+		5557950A264F3AC8001DCFF0 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55579509264F3AC8001DCFF0 /* StoreDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		555794D12645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribedStoresTableViewController.swift; sourceTree = "<group>"; };
 		555794D526461793001DCFF0 /* OwnerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewController.swift; sourceTree = "<group>"; };
 		55579506264F2D32001DCFF0 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
+		55579509264F3AC8001DCFF0 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				555794D12645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift */,
 				555794D526461793001DCFF0 /* OwnerProfileViewController.swift */,
 				55579506264F2D32001DCFF0 /* AddStoreViewController.swift */,
+				55579509264F3AC8001DCFF0 /* StoreDetailViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				5516C028261045D900482665 /* RegistrationViewController.swift in Sources */,
 				555794CF2645FC96001DCFF0 /* SubscribedStoresCell.swift in Sources */,
 				5557949426338FC0001DCFF0 /* UpdateProfile.swift in Sources */,
+				5557950A264F3AC8001DCFF0 /* StoreDetailViewController.swift in Sources */,
 				5516C00F26102CDC00482665 /* LoginViewController.swift in Sources */,
 				5516C00B26102CDC00482665 /* AppDelegate.swift in Sources */,
 				55579507264F2D32001DCFF0 /* AddStoreViewController.swift in Sources */,

@@ -14,6 +14,12 @@ class AllStoresTableViewController: UITableViewController {
     var finalArray:[Any] = []
     var token : String = ""
     var name = ""
+    var city = ""
+    var country = ""
+    var postalCode = ""
+    var province = ""
+    var streetAddress = ""
+    
     var storeId : String = ""
     
     
@@ -22,7 +28,7 @@ class AllStoresTableViewController: UITableViewController {
         submitToDatabase()
         super.viewDidLoad()
         
-   
+        
         
         self.tableView.rowHeight = 269
         
@@ -32,8 +38,6 @@ class AllStoresTableViewController: UITableViewController {
         
         self.navigationItem.title = "All Stores"
         
-        let subscribeBtn = UIBarButtonItem(title: "Subscribe", style: .plain, target: self, action: #selector(subscribeStores))
-        self.navigationItem.setRightBarButton(subscribeBtn, animated: true)
         
     }
     
@@ -49,12 +53,19 @@ class AllStoresTableViewController: UITableViewController {
         return storeList.count
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+        
         if indexPath.row < self.storeList.count{
             let stores = self.storeList[indexPath.row]
-            stores.checkMark.toggle()
-         
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+            name = stores.name
+            city = stores.city
+            country = stores.country
+            province = stores.province
+            postalCode = stores.postalCode
+            streetAddress = stores.streetAddress
+            storeId = stores.id
+            goToStoreDetailPage()
+            
+            //tableView.reloadRows(at: [indexPath], with: .automatic)
         }
     }
     
@@ -71,7 +82,7 @@ class AllStoresTableViewController: UITableViewController {
             cell.lblProvince.text = stores.province
             cell.lblPostalCode.text = stores.postalCode
             cell.lblStreetAddress.text = stores.streetAddress
-        
+            
             
             let accessory: UITableViewCell.AccessoryType = stores.checkMark ? .checkmark : .none
             if(stores.checkMark){
@@ -117,7 +128,7 @@ class AllStoresTableViewController: UITableViewController {
                 print(json)
                 
                 if let jsonArray = json as? [[String:Any]] {
-                
+                    
                     
                     //print("json is array", jsonArray)
                     self.finalArray.append(jsonArray)
@@ -125,13 +136,13 @@ class AllStoresTableViewController: UITableViewController {
                     // print(finalArray)for userDictionary in jsonarray{
                     for userDictionary in jsonArray{
                         guard let id = userDictionary["_id"] as? String,
-                        let name = userDictionary["name"] as? String, let city = userDictionary["city"] as? String, let country = userDictionary["country"] as? String,let province = userDictionary["province"] as? String,let postalCode = userDictionary["postalCode"] as? String,let streetAddress = userDictionary["streetAddress"] as? String else { continue }
+                              let name = userDictionary["name"] as? String, let city = userDictionary["city"] as? String, let country = userDictionary["country"] as? String,let province = userDictionary["province"] as? String,let postalCode = userDictionary["postalCode"] as? String,let streetAddress = userDictionary["streetAddress"] as? String else { continue }
                         
                         storeList.append(Stores(id: id, name: name,city: city, country: country,province: province, postalCode: postalCode, streetAddress: streetAddress))
                         self.tableView.reloadData()
                         
                     }
-                  
+                    
                 }
                 
                 
@@ -142,31 +153,24 @@ class AllStoresTableViewController: UITableViewController {
         
         // execute the HTTP request
         task.resume()
-   
+        
         
         
     }
     
-    @objc
-    func subscribeStores()
-    {
-       // self.navigationController?.popToRootViewController(animated: true)
-        
-        self.askConfirmation()
-    }
- 
     
-    func askConfirmation(){
-        let confirmAlert = UIAlertController(title: "Confirmation", message: "Would you like to subscribe selected stores?", preferredStyle: .actionSheet)
-        
-        confirmAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {_ in
-            self.addStoreToUser()
-            self.goToProfilePage()
-        }))
-        
-        confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(confirmAlert,animated: true, completion: nil)
-    }
+    
+    //    func askConfirmation(){
+    //        let confirmAlert = UIAlertController(title: "Confirmation", message: "Would you like to subscribe selected stores?", preferredStyle: .actionSheet)
+    //
+    //        confirmAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {_ in
+    //            self.addStoreToUser()
+    //            self.goToProfilePage()
+    //        }))
+    //
+    //        confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    //        self.present(confirmAlert,animated: true, completion: nil)
+    //    }
     
     func goToProfilePage(){
         
@@ -177,73 +181,22 @@ class AllStoresTableViewController: UITableViewController {
         
     }
     
-
-    
-    func addStoreToUser() {
+    func goToStoreDetailPage(){
         
-        print(token)
-        url = URL(string: "https://sundaland.herokuapp.com/api/users/store")!
-        
-        let parameters = ["storeId": storeId] as Dictionary<String, String>
-        
-        //create the session object
-        let session = URLSession.shared
-        
-        //now create the URLRequest object using the url object
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST" //set http method as POST
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
-            
-        } catch let error {
-            print(error.localizedDescription)
-        }
-        
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        
-        //create dataTask using the session object to send data to the server
-        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-            
-            guard error == nil else {
-                return
-            }
-            
-            guard let data = data else {
-                return
-            }
-            
-            do {
-                //create json object from data
-                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    print(json)
-                    // handle json...\
-            
-                    if let obj = json as? NSDictionary {
-                        
-                        if ((obj["token"]) != nil){
-                            
-                        self.token = obj["token"] as! String
-                        print(self.token)
-                            
-                        }else{
-                            print("eroor!")
-                        }
-                    
-                    }
-                }
-                
-            } catch let error {
-                print(error.localizedDescription)
-                // self.isFoundUser = false
-            }
-        })
-        task.resume()
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let storeDetailVC = storyboard.instantiateViewController(identifier: "StoreDetailVC") as! StoreDetailViewController
+        storeDetailVC.name = name
+        storeDetailVC.city = city
+        storeDetailVC.country = country
+        storeDetailVC.postalCode = postalCode
+        storeDetailVC.province = province
+        storeDetailVC.streetAddress = streetAddress
+        storeDetailVC.id = storeId
+        storeDetailVC.token = token
+        self.navigationController?.pushViewController(storeDetailVC, animated: true)
         
     }
     
+    
+    
 }
-
