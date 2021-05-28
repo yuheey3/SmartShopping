@@ -72,7 +72,7 @@ class UserMainViewController: UIViewController, UITableViewDelegate, UITableView
         }
         var delegate = ""
         
-        var items = ["", "User Information", "Second", "Third", "option"]
+        var items = ["", "User Information", "", "Sign out"]
         
         let darkColor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
         
@@ -103,18 +103,19 @@ class UserMainViewController: UIViewController, UITableViewDelegate, UITableView
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 let profileVC = storyboard.instantiateViewController(identifier: "ProfileVC") as! UserProfileViewController
                    profileVC.token = grobalToken
-                
-             
             
-             
-              
-                
-                
                 self.navigationController?.pushViewController(profileVC, animated: true)
-           
+
+            }
+            if (indexPath.row == 3){
                 
-              
-            
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let loginVC = storyboard.instantiateViewController(identifier: "LoginVC") as! LoginViewController
+                loginVC.token = ""
+                
+                self.navigationController?.pushViewController(loginVC, animated: true)
+                
+                
             }
             
         }
@@ -192,6 +193,7 @@ class UserMainViewController: UIViewController, UITableViewDelegate, UITableView
     
     func submitToDatabase() {
         storeList = []
+        finalArray = []
         print(token)
         
         
@@ -215,13 +217,13 @@ class UserMainViewController: UIViewController, UITableViewDelegate, UITableView
             
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
+            
                 return
             }
             do {
                 
                 let json = try JSONSerialization.jsonObject(with: data)
                 print(json)
-                
                 if let jsonArray = json as? [[String:Any]] {
                     
                     
@@ -235,6 +237,7 @@ class UserMainViewController: UIViewController, UITableViewDelegate, UITableView
                        
                         storeList.append(Stores(id: id, name: name,city: city, country: country,province: province, postalCode: postalCode, streetAddress: streetAddress))
                         DispatchQueue.main.async {
+                            
                         self.tableView.reloadData()
                         }
                     }
@@ -244,6 +247,7 @@ class UserMainViewController: UIViewController, UITableViewDelegate, UITableView
                 
             } catch let error as NSError {
                 print(error.localizedDescription)
+               
             }
         })
         

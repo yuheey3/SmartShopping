@@ -17,6 +17,20 @@ class Stores : Codable{
     var streetAddress : String
     var checkMark: Bool
     
+    
+    init(){
+        
+        self.id = ""
+        self.name = ""
+        self.city = ""
+        self.country = ""
+        self.postalCode = ""
+        self.province = ""
+        self.streetAddress = ""
+        self.checkMark = false
+    
+    }
+    
     init(id: String, name: String, city: String, country: String, province: String, postalCode: String, streetAddress: String){
         
         self.id = id
