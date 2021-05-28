@@ -34,11 +34,11 @@ class StoreDetailViewController: UIViewController {
         super.viewDidLoad()
         
         lblName.text = name
-        lblCity.text = city
-        lblCountry.text = country
-        lblProvince.text = province
-        lblPostalCode.text = postalCode
-        lblStreetAddress.text = streetAddress
+        lblCity.text = streetAddress + ", " + city + ", " + province + ", " + country
+//        lblCountry.text = country
+//        lblProvince.text = province
+//        lblPostalCode.text = postalCode
+//        lblStreetAddress.text = streetAddress
         
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(StoreDetailViewController.addStoreToUser))
@@ -54,16 +54,16 @@ class StoreDetailViewController: UIViewController {
 
     @objc func addStoreToUser() {
         if(isSubscribed){
-            imageView.image = starFill
+            imageView.image = star
             isSubscribed = false
         }else{
-            imageView.image = star
+            imageView.image = starFill
             isSubscribed = true
         }
         
         let url = URL(string: "https://sundaland.herokuapp.com/api/users/store")!
        // imageView.setImage( UIImage(named:"Unchecked.png"), forState: .Normal)
-        imageView.image = starFill
+       // imageView.image = starFill
         
         let parameters = ["storeId": id] as Dictionary<String, String>
         

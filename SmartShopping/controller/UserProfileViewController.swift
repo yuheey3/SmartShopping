@@ -136,27 +136,66 @@ class UserProfileViewController: UIViewController {
         
     }
     
-    
-    @IBAction func goToAllAtores(){
+    @IBAction func goToMain(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let allStoresVC = storyboard.instantiateViewController(identifier: "AllStoresVC") as! AllStoresTableViewController
         
-        allStoresVC.token = token
+        if(!isOwner){
+        let userMainVC = storyboard.instantiateViewController(identifier: "UserMainVC") as! UserMainViewController
         
-        self.navigationController?.pushViewController(allStoresVC, animated: true)
+        userMainVC.token = token
+        userMainVC.userName = name
+      
+        self.navigationController?.pushViewController(userMainVC, animated: true)
+        }else{
+            let ownerMainVC = storyboard.instantiateViewController(identifier: "OwnerMainVC") as! OwnerMainViewController
+            
+            ownerMainVC.token = token
+            ownerMainVC.name = name
+          
+            self.navigationController?.pushViewController(ownerMainVC, animated: true)
+            
+            
+            
+        }
         
         
     }
     
-    @IBAction func goToSubscribedStores(){
+    
+//    @IBAction func goToAllAtores(){
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let allStoresVC = storyboard.instantiateViewController(identifier: "AllStoresVC") as! AllStoresTableViewController
+//
+//        allStoresVC.token = token
+//
+//        self.navigationController?.pushViewController(allStoresVC, animated: true)
+//
+//
+//    }
+    
+//    @IBAction func goToSubscribedStores(){
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let subscribedStoresVC = storyboard.instantiateViewController(identifier: "SubscribedStoresVC") as! SubscribedStoresTableViewController
+//
+//        subscribedStoresVC.token = token
+//
+//        self.navigationController?.pushViewController(subscribedStoresVC, animated: true)
+//
+//
+//    }
+    
+    
+    @IBAction func goToTemp(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let subscribedStoresVC = storyboard.instantiateViewController(identifier: "SubscribedStoresVC") as! SubscribedStoresTableViewController
+        let userMainVC = storyboard.instantiateViewController(identifier: "UserMainVC") as! UserMainViewController
         
-        subscribedStoresVC.token = token
+        userMainVC.token = token
         
-        self.navigationController?.pushViewController(subscribedStoresVC, animated: true)
+        self.navigationController?.pushViewController(userMainVC, animated: true)
         
         
     }

@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     var password : String = ""
     var isFoundUser : Bool = true
     var isOwner : Bool = false
+    var name = ""
     
     var token : String = ""
     
@@ -49,7 +50,7 @@ class LoginViewController: UIViewController {
             if(token != ""){
                 //login successful
                 print("login successful")
-                goToProfilePage()
+                goToAllStoresViewPage()
                 self.tfEmail.text = ""
                 self.tfPassword.text = ""
                 
@@ -70,6 +71,7 @@ class LoginViewController: UIViewController {
         }
         
     }
+    //not use anymore
     func goToProfilePage(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -82,6 +84,32 @@ class LoginViewController: UIViewController {
             let ownerProfileVC = storyboard.instantiateViewController(identifier: "OwnerProfileVC") as! OwnerProfileViewController
             ownerProfileVC.token = token
             self.navigationController?.pushViewController(ownerProfileVC, animated: true)
+            
+        }
+        
+    }
+    
+    func goToAllStoresViewPage(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if(!isOwner){
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let userMainVC = storyboard.instantiateViewController(identifier: "UserMainVC") as! UserMainViewController
+            
+            userMainVC.token = token
+            userMainVC.userName = name
+            self.navigationController?.pushViewController(userMainVC, animated: true)
+            
+        }else{
+//            let ownerProfileVC = storyboard.instantiateViewController(identifier: "OwnerProfileVC") as! OwnerProfileViewController
+//            ownerProfileVC.token = token
+//            self.navigationController?.pushViewController(ownerProfileVC, animated: true)
+            
+            
+            let ownerMainVC = storyboard.instantiateViewController(identifier: "OwnerMainVC") as! OwnerMainViewController
+            ownerMainVC.token = token
+            ownerMainVC.name = name
+            self.navigationController?.pushViewController(ownerMainVC, animated: true)
             
         }
         
@@ -133,6 +161,7 @@ class LoginViewController: UIViewController {
                     if let obj = json as? NSDictionary {
                         
                         self.isOwner = obj["isOwner"] as! Bool
+                        self.name = obj["name"] as! String
                         
                         if ((obj["token"]) != nil){
                             

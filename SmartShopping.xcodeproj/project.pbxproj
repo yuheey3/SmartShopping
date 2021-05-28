@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,9 +25,14 @@
 		555794D626461793001DCFF0 /* OwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794D526461793001DCFF0 /* OwnerProfileViewController.swift */; };
 		55579507264F2D32001DCFF0 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55579506264F2D32001DCFF0 /* AddStoreViewController.swift */; };
 		5557950A264F3AC8001DCFF0 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55579509264F3AC8001DCFF0 /* StoreDetailViewController.swift */; };
+		5557950D265851D9001DCFF0 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557950C265851D9001DCFF0 /* UserMainViewController.swift */; };
+		5557951026585AD8001DCFF0 /* AllStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557950F26585AD8001DCFF0 /* AllStoreCell.swift */; };
+		557FC8AC265C84D50058CD21 /* OwnerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557FC8AB265C84D50058CD21 /* OwnerMainViewController.swift */; };
+		CDBD236B655627A82DEE18CB /* Pods_SmartShopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC424872D6FE1D8C649DA0D1 /* Pods_SmartShopping.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		348810AE6638734E1EA6CC63 /* Pods-SmartShopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartShopping.debug.xcconfig"; path = "Target Support Files/Pods-SmartShopping/Pods-SmartShopping.debug.xcconfig"; sourceTree = "<group>"; };
 		5516C00726102CDC00482665 /* SmartShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5516C00A26102CDC00482665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5516C00C26102CDC00482665 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +53,11 @@
 		555794D526461793001DCFF0 /* OwnerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewController.swift; sourceTree = "<group>"; };
 		55579506264F2D32001DCFF0 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		55579509264F3AC8001DCFF0 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
+		5557950C265851D9001DCFF0 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
+		5557950F26585AD8001DCFF0 /* AllStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStoreCell.swift; sourceTree = "<group>"; };
+		557FC8AB265C84D50058CD21 /* OwnerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMainViewController.swift; sourceTree = "<group>"; };
+		EC424872D6FE1D8C649DA0D1 /* Pods_SmartShopping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartShopping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE823BDD22E1EAE1E609488C /* Pods-SmartShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartShopping.release.xcconfig"; path = "Target Support Files/Pods-SmartShopping/Pods-SmartShopping.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +65,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBD236B655627A82DEE18CB /* Pods_SmartShopping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F43D8C8C0FCC28894600FE6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				348810AE6638734E1EA6CC63 /* Pods-SmartShopping.debug.xcconfig */,
+				FE823BDD22E1EAE1E609488C /* Pods-SmartShopping.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5516BFFE26102CDC00482665 = {
 			isa = PBXGroup;
 			children = (
 				5516C00926102CDC00482665 /* SmartShopping */,
 				5516C00826102CDC00482665 /* Products */,
+				1F43D8C8C0FCC28894600FE6 /* Pods */,
+				A02B0AFF7A1AF54EEAED190D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,8 +137,19 @@
 				555794D526461793001DCFF0 /* OwnerProfileViewController.swift */,
 				55579506264F2D32001DCFF0 /* AddStoreViewController.swift */,
 				55579509264F3AC8001DCFF0 /* StoreDetailViewController.swift */,
+				5557950C265851D9001DCFF0 /* UserMainViewController.swift */,
+				5557950F26585AD8001DCFF0 /* AllStoreCell.swift */,
+				557FC8AB265C84D50058CD21 /* OwnerMainViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		A02B0AFF7A1AF54EEAED190D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC424872D6FE1D8C649DA0D1 /* Pods_SmartShopping.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5516C01B26102CDD00482665 /* Build configuration list for PBXNativeTarget "SmartShopping" */;
 			buildPhases = (
+				B8368559DD706E513EAB7830 /* [CP] Check Pods Manifest.lock */,
 				5516C00326102CDC00482665 /* Sources */,
 				5516C00426102CDC00482665 /* Frameworks */,
 				5516C00526102CDC00482665 /* Resources */,
+				05043D7B555D8F317621D837 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,13 +219,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05043D7B555D8F317621D837 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartShopping/Pods-SmartShopping-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartShopping/Pods-SmartShopping-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartShopping/Pods-SmartShopping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8368559DD706E513EAB7830 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartShopping-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5516C00326102CDC00482665 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5557950D265851D9001DCFF0 /* UserMainViewController.swift in Sources */,
 				555794D626461793001DCFF0 /* OwnerProfileViewController.swift in Sources */,
 				5557943D2629FE23001DCFF0 /* UserProfileViewController.swift in Sources */,
+				557FC8AC265C84D50058CD21 /* OwnerMainViewController.swift in Sources */,
 				555794D22645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift in Sources */,
 				5516C028261045D900482665 /* RegistrationViewController.swift in Sources */,
 				555794CF2645FC96001DCFF0 /* SubscribedStoresCell.swift in Sources */,
@@ -201,6 +280,7 @@
 				55579507264F2D32001DCFF0 /* AddStoreViewController.swift in Sources */,
 				555794CB263C8D19001DCFF0 /* Stores.swift in Sources */,
 				555794C8263C8BDE001DCFF0 /* AllStoresCell.swift in Sources */,
+				5557951026585AD8001DCFF0 /* AllStoreCell.swift in Sources */,
 				555794C4263C8867001DCFF0 /* AllStoresTableViewController.swift in Sources */,
 				5516C00D26102CDC00482665 /* SceneDelegate.swift in Sources */,
 				5516C02426103E4600482665 /* User.swift in Sources */,
@@ -347,6 +427,7 @@
 		};
 		5516C01C26102CDD00482665 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 348810AE6638734E1EA6CC63 /* Pods-SmartShopping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -366,6 +447,7 @@
 		};
 		5516C01D26102CDD00482665 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE823BDD22E1EAE1E609488C /* Pods-SmartShopping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
