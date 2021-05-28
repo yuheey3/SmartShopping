@@ -53,7 +53,7 @@ class AddStoreViewController: UIViewController {
            // submitToDatabase()
             
             self.askConfirmation()
-            self.goToProfilePage()
+           // self.goToProfilePage()
             
             
         }
@@ -79,13 +79,13 @@ class AddStoreViewController: UIViewController {
         self.present(confirmAlert, animated: true, completion: nil)
     }
     
-    func goToProfilePage(){
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let ownerProfileVC = storyboard.instantiateViewController(identifier: "OwnerProfileVC") as! OwnerProfileViewController
-            ownerProfileVC.token = token
-            self.navigationController?.pushViewController(ownerProfileVC, animated: true)
-        }
+//    func goToProfilePage(){
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//            let ownerProfileVC = storyboard.instantiateViewController(identifier: "OwnerProfileVC") as! OwnerProfileViewController
+//            ownerProfileVC.token = token
+//            self.navigationController?.pushViewController(ownerProfileVC, animated: true)
+//        }
         
     
     
@@ -141,7 +141,7 @@ class AddStoreViewController: UIViewController {
             }
         })
         task.resume()
-        goToProfilePage()
+       // goToProfilePage()
 
     }
     

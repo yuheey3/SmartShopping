@@ -71,23 +71,23 @@ class LoginViewController: UIViewController {
         }
         
     }
-    //not use anymore
-    func goToProfilePage(){
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if(!isOwner){
-            let profileVC = storyboard.instantiateViewController(identifier: "ProfileVC") as! UserProfileViewController
-            profileVC.token = token
-            self.navigationController?.pushViewController(profileVC, animated: true)
-            
-        }else{
-            let ownerProfileVC = storyboard.instantiateViewController(identifier: "OwnerProfileVC") as! OwnerProfileViewController
-            ownerProfileVC.token = token
-            self.navigationController?.pushViewController(ownerProfileVC, animated: true)
-            
-        }
-        
-    }
+//    //not use anymore
+//    func goToProfilePage(){
+//        
+//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        if(!isOwner){
+//            let profileVC = storyboard.instantiateViewController(identifier: "ProfileVC") as! UserProfileViewController
+//            profileVC.token = token
+//            self.navigationController?.pushViewController(profileVC, animated: true)
+//            
+//        }else{
+//            let ownerProfileVC = storyboard.instantiateViewController(identifier: "OwnerProfileVC") as! OwnerProfileViewController
+//            ownerProfileVC.token = token
+//            self.navigationController?.pushViewController(ownerProfileVC, animated: true)
+//            
+//        }
+//        
+//    }
     
     func goToAllStoresViewPage(){
         

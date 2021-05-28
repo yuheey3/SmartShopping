@@ -16,13 +16,7 @@
 		5516C02426103E4600482665 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516C02326103E4600482665 /* User.swift */; };
 		5516C028261045D900482665 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516C027261045D900482665 /* RegistrationViewController.swift */; };
 		5557943D2629FE23001DCFF0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557943C2629FE23001DCFF0 /* UserProfileViewController.swift */; };
-		5557949426338FC0001DCFF0 /* UpdateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557949326338FC0001DCFF0 /* UpdateProfile.swift */; };
-		555794C4263C8867001DCFF0 /* AllStoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794C3263C8867001DCFF0 /* AllStoresTableViewController.swift */; };
-		555794C8263C8BDE001DCFF0 /* AllStoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794C7263C8BDE001DCFF0 /* AllStoresCell.swift */; };
 		555794CB263C8D19001DCFF0 /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794CA263C8D18001DCFF0 /* Stores.swift */; };
-		555794CF2645FC96001DCFF0 /* SubscribedStoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794CE2645FC96001DCFF0 /* SubscribedStoresCell.swift */; };
-		555794D22645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794D12645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift */; };
-		555794D626461793001DCFF0 /* OwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555794D526461793001DCFF0 /* OwnerProfileViewController.swift */; };
 		55579507264F2D32001DCFF0 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55579506264F2D32001DCFF0 /* AddStoreViewController.swift */; };
 		5557950A264F3AC8001DCFF0 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55579509264F3AC8001DCFF0 /* StoreDetailViewController.swift */; };
 		5557950D265851D9001DCFF0 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557950C265851D9001DCFF0 /* UserMainViewController.swift */; };
@@ -44,13 +38,7 @@
 		5516C02326103E4600482665 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5516C027261045D900482665 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		5557943C2629FE23001DCFF0 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		5557949326338FC0001DCFF0 /* UpdateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfile.swift; sourceTree = "<group>"; };
-		555794C3263C8867001DCFF0 /* AllStoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStoresTableViewController.swift; sourceTree = "<group>"; };
-		555794C7263C8BDE001DCFF0 /* AllStoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStoresCell.swift; sourceTree = "<group>"; };
 		555794CA263C8D18001DCFF0 /* Stores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
-		555794CE2645FC96001DCFF0 /* SubscribedStoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribedStoresCell.swift; sourceTree = "<group>"; };
-		555794D12645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribedStoresTableViewController.swift; sourceTree = "<group>"; };
-		555794D526461793001DCFF0 /* OwnerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewController.swift; sourceTree = "<group>"; };
 		55579506264F2D32001DCFF0 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		55579509264F3AC8001DCFF0 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		5557950C265851D9001DCFF0 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
@@ -129,12 +117,6 @@
 				5557943C2629FE23001DCFF0 /* UserProfileViewController.swift */,
 				5516C027261045D900482665 /* RegistrationViewController.swift */,
 				5516C00E26102CDC00482665 /* LoginViewController.swift */,
-				5557949326338FC0001DCFF0 /* UpdateProfile.swift */,
-				555794C3263C8867001DCFF0 /* AllStoresTableViewController.swift */,
-				555794C7263C8BDE001DCFF0 /* AllStoresCell.swift */,
-				555794CE2645FC96001DCFF0 /* SubscribedStoresCell.swift */,
-				555794D12645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift */,
-				555794D526461793001DCFF0 /* OwnerProfileViewController.swift */,
 				55579506264F2D32001DCFF0 /* AddStoreViewController.swift */,
 				55579509264F3AC8001DCFF0 /* StoreDetailViewController.swift */,
 				5557950C265851D9001DCFF0 /* UserMainViewController.swift */,
@@ -267,21 +249,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5557950D265851D9001DCFF0 /* UserMainViewController.swift in Sources */,
-				555794D626461793001DCFF0 /* OwnerProfileViewController.swift in Sources */,
 				5557943D2629FE23001DCFF0 /* UserProfileViewController.swift in Sources */,
 				557FC8AC265C84D50058CD21 /* OwnerMainViewController.swift in Sources */,
-				555794D22645FCD8001DCFF0 /* SubscribedStoresTableViewController.swift in Sources */,
 				5516C028261045D900482665 /* RegistrationViewController.swift in Sources */,
-				555794CF2645FC96001DCFF0 /* SubscribedStoresCell.swift in Sources */,
-				5557949426338FC0001DCFF0 /* UpdateProfile.swift in Sources */,
 				5557950A264F3AC8001DCFF0 /* StoreDetailViewController.swift in Sources */,
 				5516C00F26102CDC00482665 /* LoginViewController.swift in Sources */,
 				5516C00B26102CDC00482665 /* AppDelegate.swift in Sources */,
 				55579507264F2D32001DCFF0 /* AddStoreViewController.swift in Sources */,
 				555794CB263C8D19001DCFF0 /* Stores.swift in Sources */,
-				555794C8263C8BDE001DCFF0 /* AllStoresCell.swift in Sources */,
 				5557951026585AD8001DCFF0 /* AllStoreCell.swift in Sources */,
-				555794C4263C8867001DCFF0 /* AllStoresTableViewController.swift in Sources */,
 				5516C00D26102CDC00482665 /* SceneDelegate.swift in Sources */,
 				5516C02426103E4600482665 /* User.swift in Sources */,
 			);
