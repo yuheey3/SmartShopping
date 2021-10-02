@@ -1,6 +1,13 @@
 # SmartShopping
-This app allows to find sale products for customer 
+This app allows to manage store for owner and find sale products for customer.
 
+This project is group project and currently working.
+
+Yuki- iOS
+
+Gihoon - Android
+
+Jin - Server(API) and Web
 
 
 
